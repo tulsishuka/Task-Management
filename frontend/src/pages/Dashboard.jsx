@@ -65,10 +65,17 @@ const deleteTodo = async (id) => {
   return (
     <div className="min-h-screen bg-gray-100 p-8">
 
-      <div className="flex justify-between items-center mb-6">
+     <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold text-gray-800">My Todos</h1>
-        <button onClick={() => { localStorage.removeItem('token'); 
-                                navigate('/login');}} className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded">Logout</button>
+        <button
+          onClick={() => {
+            localStorage.removeItem('token');
+            navigate('/login');
+          }}
+          className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded"
+        >
+          Logout
+        </button>
       </div>
 
       <div className="mb-6 flex flex-col gap-2">
