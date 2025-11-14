@@ -15,7 +15,7 @@ export default function Dashboard() {
     fetchTodos();
   }, []);
 
-  // Fetch all todos
+
   const fetchTodos = async () => {
     try {
       const res = await API.get('/todo/all');
@@ -26,7 +26,7 @@ export default function Dashboard() {
     }
   };
 
-  // Add new todo
+
   const addTodo = async () => {
     if (!title) return alert('Title required');
     try {
@@ -72,12 +72,7 @@ const deleteTodo = async (id) => {
       </div>
 
       <div className="mb-6 flex flex-col gap-2">
-        <input
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          placeholder="Title"
-          className="p-3 rounded-lg border"
-        />
+        <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Title"className="p-3 rounded-lg border"/>
         <input value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Description" className="p-3 rounded-lg border"/>
         <input value={purpose} onChange={(e) => setPurpose(e.target.value)} placeholder="Purpose" className="p-3 rounded-lg border"/>
         <button onClick={addTodo} className="bg-green-500 hover:bg-green-900 text-white px-4 py-2 rounded-lg">Add Todo</button>
@@ -93,9 +88,7 @@ const deleteTodo = async (id) => {
             <div className="flex items-center gap-3">
               <input type="checkbox" checked={todo.completed} onChange={() => toggleTodo(todo._id)}/>
               <div>
-                <p className={`font-semibold ${ todo.completed ? 'line-through text-gray-400' : ''}`}>
-                  {todo.title}
-                </p>
+                <p className={`font-semibold ${ todo.completed ? 'line-through text-gray-400' : ''}`}>{todo.title}</p>
                 <p className="text-gray-500 text-sm">{todo.description}</p>
                 <p className="text-gray-400 text-sm italic">{todo.purpose}</p>
               </div>
