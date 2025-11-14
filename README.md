@@ -44,6 +44,10 @@ Bcryptjs
 ```
 Installation
 ```
+
+git clone https://github.com/tulsishuka/Task-Management.git
+
+
 Backend Setup
 
 cd backend
