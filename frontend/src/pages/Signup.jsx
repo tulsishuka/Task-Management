@@ -14,7 +14,7 @@ export default function Signup() {
     try {
       const res = await API.post('/auth/signup', form);
       localStorage.setItem('token', res.data.token);
-      navigate('/dashboard');
+      navigate('/Dashboard');
     } catch (err) {
       alert(err.response.data.message);
     }
